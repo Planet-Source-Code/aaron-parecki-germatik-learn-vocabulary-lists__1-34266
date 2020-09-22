@@ -1,0 +1,350 @@
+Germatik
+
+Revision history
+
+This program originally worked differently until version 2.00
+Some of the revisions won't make sense because the feature was
+removed or changed. Just a warning.
+
+1.0.0  -  11-08-01
+  original release
+
+1.0.1  -  11-09-01
+  fixed bug - files of different lengths were
+  initialized anyway
+
+  fixed bug - after files of different lengths were
+  initialized, files of same lengths appeared to
+  have different lengths
+
+1.0.2  -  11-10-01
+  fixed bug - the correct temporary file was not
+  deleted when program was closed before the test
+  had ended
+
+  fixed bug - run-time error on minimize
+
+  added feature - added picture in background
+
+1.0.3  -  11-11-01
+  added feature - umlaut characters and ss can be typed
+  into guess box by holding down CTRL.
+
+  added feature - minor interface updates
+
+1.0.4  -  11-12-01
+  fixed bug - umlauts could not be typed in "wrong"
+  window.
+
+1.0.5  -  11-16-01
+  fixed bug - cursor was unable to move in guess box
+
+  fixed bug - umlaut characters were only able to be
+  added to the end of the word
+
+2.0.0  -  11-21-01
+  added feature - added program to create/edit lists
+  of words. "ListEditor"
+
+  added feature - now possible to save and load tests
+
+  code improvement - now loads entire list of words into
+  memory. Removes word from list when it is right.
+  This speeds up choosing a word, and no file access
+  after lists are initialized!
+
+  fixed bug - now opens wrong window, and list editor
+  window as modal. (Program pauses until window is closed)
+
+  added feature - keeps track of streaks (longest
+  and current)
+
+  improvement - german and english words are saved in
+  the same file. Now uses standard open/save dialog
+  boxes to load the list. Size of window is now smaller.
+
+  improvement - displays background in high
+  color if you are running more than 256 colors,
+  otherwise displays low color version.
+
+  change - umlaut characters now must be typed by ALT
+
+2.0.1  -  11-22-01
+  fixed bug - didn't unload program from memory on
+  exit when closed by X button
+
+  code improvement - put umlaut code in a module instead
+  of duplicating for each use. Decreases program size.
+
+2.0.2  -  11-23-01
+  fixed bug - run-time error when listEditor is resized
+  too small
+
+  improvement - both lists in listEditor scroll together
+              - after item is changed, it is selected
+              - after item is added, it is selected
+
+2.1.0  -  11-26-01
+
+  improvement - reduced size of code to change an entry
+  in listEditor. List is now never cleared. Looks better.
+
+  improvement - when removing a word in listEditor, now
+  selects the word after the one removed. Makes removing
+  multiple entries easier.
+
+  fixed bug - runtime error when last word was removed
+  in listEditor
+
+  fixed bug - prevents commas from being entered in
+  input box in listEditor. When saved, they create an
+  error in the file.
+
+  added feature - added function to combine two lists
+  together in listEditor
+
+  added feature - in listEditor, if noun isn't capitalized,
+  asks you if you want it capitalized
+
+  added feature - added large size mode for main form
+
+  added feature - added option to do test in "test mode"
+  where it asks you n words and then stops. If you get a
+  word wrong, it won't appear again.
+
+  added feature - added window to set test options such
+  as "test mode" and "practice mode" and whether or not
+  to ask the words randomly
+
+  improvement - ignores leading and trailing spaces from
+  words when guessed and when added or changed from a list
+
+  added feature - pops up a message box if the noun is
+  not capitalized before the wrong window pops up
+
+  code improvement - added some remarks explaining code.
+  No effect on user.
+
+2.1.1  -  11-27-01
+
+  code improvement - put code to determine if german word
+  is a noun in a module. Also put some string functions
+  in a module. Decreases program size.
+
+  fixed bug - if word was guessed with leading spaces, and
+  the noun was capitalized, and the word was wrong, then
+  it still reminded you to capitalize the noun.
+
+  fixed bug - wrong window didn't trim leading/trailing
+  spaces from guess
+
+2.2.0  -  12-01-01
+
+  improvement - changed getWord sub to make it less likely
+  to get the same word you just got wrong in the near future.
+  Still needs improvement.
+
+  added feature - (secret) if guess is blank, a dialog will sometimes
+  be displayed with a random message.
+
+  fixed bug - did noun check even when guess was less than five letters
+
+  added feature - added option to ask the German words instead
+  of the English.
+
+  added feature - added option to turn off German spelling/grammar
+  checking. Will be more useful in the future as more checking
+  routines are added.
+
+  fixed bug - in config form, automatically disables german grammar
+  checking if asking the english words.
+
+  improvement - minor design updates to config form
+
+  fixed bug - wrong form now says "Correct English Word" or "Correct
+  German Word" appropriately
+
+  added feature - listEditor - does not add word if it is in either
+  the German or English list already.
+
+  added feature - listEditor - if first letter of german word is
+  capitalized, asks you if it is a noun, if you say yes, asks which
+  article to add.
+
+2.30  12-1-01
+
+  changed version numbering system
+
+  fixed bug - previous filename was not saved after new list was
+  created and not saved. This created a file access error when trying
+  to start test again.
+
+  added feature - displays filename of open file in title bar
+  of appropriate windows.
+
+  improvement - main window pops up faster after splash screen.
+
+  added feature - added about dialog. Also displays free system memory.
+
+  fixed bug - when listEditor checked to see if a word was already
+  in the lists, it checked for any part of the word. This meant you
+  could not have the entries "und - and" and "Grund - ground" in the
+  same list
+
+  fixed bug - listEditor - when a file was added, the filename was
+  changed to the added file. Now remains the original file added to.
+
+  fixed bug - listEditor - removed minimize button. This created a
+  run-time error.
+
+  fixed bug - listEditor - now cannot save an empty list
+
+  fixed bug - listEditor - now updates title bar filename after save as
+
+  fixed bug - changed getWord sub back to random. The previous way
+  created a "subscript out of range" error
+
+  added feature - strikes out wrong answer on wrong form
+
+  added feature - added form from within listEditor to extract words
+  from the open file and save to another.
+
+  added feature - added keyboard shortcuts to most buttons
+
+  added feature - added tooltips
+
+  improvement - in all double lists (i.e. listEditor),
+  opposite word is selected immediately
+
+  improvement - list boxes scroll together better
+
+  removed feature - removed saving and loading of tests. Will
+  possibly put it back.
+
+  added feature - added counter that displays how many words
+  left until end of test
+
+3.00  1-1-02
+
+  added feature - added form to search a list for a whole or a
+  part of a german or english word and display both if found.
+  "Word Finder"
+
+  improvement - changed getWord sub - asks wrong words only after
+  all others have been asked. This fixes the problem of after
+  getting a word wrong, having the same word appear right away.
+
+  added feature - added form that pops up at the end of a test that
+  displays all the words you got wrong. Also possible to save this
+  list to a file for practice on problem words.
+
+  added feature - now gives a score at the end of the test. Score
+  is based on performance compared to the number of words in the
+  list. Also keeps a list of the high scores in the registry.
+
+  fixed bug - if somehow, you manage to try to open a file that
+  doesn't exist, the program won't crash anymore
+
+  code improvement - when unchecking "show photo," now loads an
+  empty picture instead of a grey pixel from another form. Decreases
+  file size slightly.
+
+  added feature - now can immediately start a test by dragging the
+  list of words onto the program icon
+
+  added feature - now can load a list of words and start the test
+  by dragging a file onto the main program window
+
+  improvement - changed window starting positions to center
+
+3.01  1-5-02
+
+  improvement - changed 24-bit picture to a 256-color approximation.
+  Still looks good, and reduces file size by a bunch.
+
+  change - added my email and web address to about form
+
+  added feature - when a new window is loaded, the previous one is
+  hidden
+
+  added feature - added minimize button to main form
+
+3.02 1-12-02
+
+  improvement - in listEditor, when you click on a word, change
+  it, then hit enter (or Add), program asks you if you intend to
+  change the word. Easier to change a word (instead of pressing
+  "change")
+
+  improvement - changed all window starting positions to center
+
+  fixed bug - removed minimize and maximize buttons from forms
+
+  fixeg bug - made all windows unsizeable
+
+  fixed bug - changed my mind about hiding the previous window.
+  No icon was displayed in the taskbar. Now only any window on top
+  of main is hidden if another pops up.
+
+  added feature - score window now displays your score over total
+  possible score for this list
+
+  fixed bug - if comma was entered as part of name when saving
+  high score, major problem reading back score!!
+
+3.03 1-21-02
+
+  improvement - window that pops up after correct word is now a 
+  sepatate form, not a message box. Doesn't beep anymore, and also
+  appears in the center of the main form.
+
+  improvement - when switched to large size mode, form is centered
+
+  added feature - sometimes the guess button would accidently be
+  selected, so now if you type a letter onto the button, it jumps
+  to the guess box.
+
+  added feature - added help menu item about umlauted characters.
+
+  added feature - when in large size mode, the wrong form is also
+  made large
+
+  added feature - added menu option to view high scores
+
+  added feature - on score form, new score is bold
+
+  fixed bug - always checks to see if the file exists before opening.
+  Prevents all unlikely program errors due to missing files.
+
+  added feature - listEditor - now asks if you want to cancel closing
+
+  improvement - listEditor - now can only save list if list has been changed
+
+  fixed bug - when total possible score was calculated, it calculated it
+  on the number of words in the list instead of the total number words
+  it was going to ask you. If you were using test mode, the score would
+  look very little.
+
+  added feature - you can now start a test by double-clicking on the
+  list of words you want to use
+
+3.10  1-22-02
+
+  added feature - added articleFinder, finds the article of a noun
+  you input
+
+  fixed bug - listEditor - it was possible to change a word to some
+  word that existed already. Took out change button. Now you change
+  a word by adding it, and it will ask you if you want to change.
+  Now not possible (I think) to have a duplicate word at all.
+
+  fixed bug - listEditor - word was not changed when user pressed
+  add, and said yes to change.
+
+  added feature = listEditor - when adding a word, also checks to
+  see if the word exists with a different article.
+
+  added feature - listEditor - when resized, it centers itself
+
+  fixed bug - after viewing high scores, no new score was added
+
