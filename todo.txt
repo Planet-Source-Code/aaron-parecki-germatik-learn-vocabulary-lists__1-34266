@@ -1,0 +1,45 @@
+TO DO:
+
+If you have any ideas of how to accomplish
+any of the items in this list, please email
+me. ap@aaronparecki.com
+
+*************************************
+find way to get long filename from a
+short one and display the long filename
+when a list is loaded by Command() parameters
+
+***********************************
+analyze guess if wrong and point out
+what about it is wrong
+
+*************************************
+give partial credit for word if it is
+  spelled wrong (change answer and
+  guess to sounds-like equivalents!
+  compare those!)
+
+*************************************
+add random option to use same set of
+random numbers (enter seed)
+
+*************************************
+If punctuation is wrong, then count as
+right. Ex.
+. instead of ! is still ok
+maybe only that one
+
+*************************************
+Add button to clear high scores (maybe)
+
+*************************************
+add timer and display running time of
+test. Factor into score.
+
+*************************************
+prohibit CTRL+C or +V in guess box
+
+*************************************
+get rid of beeps! beeps
+when typing ALT + a into text box (no
+ideas yet)
